@@ -23,6 +23,7 @@
       </form>
       <ul class="todo-list">
         <% todoTasks.forEach(details => { %> <% if (details._id == idTask) { %>
+        <!-- Render update component -->
         <li class="todo-list-item">
           <form action="/edit/<%= details._id %>" method="POST">
             <input type="text" value="<%= details.content %>" name="content" />
@@ -31,6 +32,7 @@
           </form>
         </li>
         <% } else { %>
+        <!-- Render normal todo component -->
         <li class="todo-list-item">
           <div class="todo-list-item-name"><%= details.content %></div>
           <a href="/edit/<%= details._id %>" class="edit">

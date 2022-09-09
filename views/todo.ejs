@@ -17,17 +17,22 @@
   <div class="todo-container">
     <h2>To-Do List</h2>
     <div class="todo">
+      <!-- When submit button is pressed, the new task is posted -->
       <form action="/" method="POST" class="todo-header">
         <input type="text" name="content" />
         <button type="submit"><span class="fas fa-plus"></span></button>
       </form>
       <ul class="todo-list">
+        <!-- For loop to render each task -->
         <% todoTasks.forEach(details => { %>
         <li class="todo-list-item">
+          <!-- Use the contents of the task as the name -->
           <div class="todo-list-item-name"><%= details.content %></div>
+          <!-- Edit button -->
           <a href="/edit/<%= details._id %>" class="edit">
             <span class="fas fa-edit"></span>
           </a>
+          <!-- Remove button -->
           <a href="/remove/<%= details._id %>" class="remove">
             <span class="fas fa-times"></span>
           </a>

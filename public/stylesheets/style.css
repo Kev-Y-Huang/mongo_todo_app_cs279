@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+
+  /* Any border or padding is included in height and width calculations */
   box-sizing: border-box;
 }
 body {
@@ -8,16 +10,22 @@ body {
 }
 .todo-container {
   color: white;
+
+  /* Set position of the todo-container to the center of the screen */
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+
   padding: 20px;
   width: 600px;
-  transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
+
+  /* Using flexbox for display layouts */
   display: flex;
   flex-direction: column;
+
   align-items: center;
 }
 .todo {
@@ -62,7 +70,9 @@ body {
   display: flex;
 }
 .todo-list-item input {
+  /* flex-grow used to increase size of input relative to other elements in the row */
   flex-grow: 2;
+
   margin-right: 20px;
   border: none;
   border-radius: 5px;
